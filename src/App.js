@@ -30,16 +30,14 @@ export default function App() {
   ];
 
   return (
-    <div>
-      <StyledPage>
-        <StyledHeading>Wofür bist du heute dankbar?</StyledHeading>
+    <StyledPage>
+      <StyledHeading>Wofür bist du heute dankbar?</StyledHeading>
 
-        <div>
-          {dayEntries.map((object, index) => (
-            <Dayentry key={index} text={object.text} datum={object.date} />
-          ))}
-        </div>
-      </StyledPage>
-    </div>
+      <div>
+        {dayEntries.map((object, index) => (
+          <Dayentry key={index} text={object.text} datum={object.date} />
+        ))}
+      </div>
+    </StyledPage>
   );
 }
