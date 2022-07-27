@@ -1,37 +1,41 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
+import Dayentry from './components/Dayentry';
 
 const StyledPage = styled.div`
   padding: 15px;
 `;
 
 const StyledHeading = styled.h1`
-  color: violet;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #797431;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
   font-size: 25px;
-`;
-
-const StyledBox = styled.div`
-  border: solid 1px;
-  border-color: grey;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 25px;
-  color: grey;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 15px;
+  margin-bottom: 35px;
 `;
 
 export default function App() {
+  const dayEntries = [
+    {
+      text: 'Ich habe mir bewusst eine Stunde Zeit genommen und Yoga praktiziert.',
+      date: '21.07.2022',
+    },
+    {
+      text: 'Ich hatte einen lustigen Abend mit Freunden am Lagerfeuer.',
+      date: '20.07.2022',
+    },
+    {
+      text: 'Ich habe Zeit mit meinen Eltern und Großeltern verbracht.',
+      date: '19.07.2022',
+    },
+  ];
+
   return (
-    <div>
-      <StyledPage>
-        <StyledHeading>Wofür bist du heute dankbar?</StyledHeading>
-        <div>
-          <StyledBox>Ich habe mir bewusst eine Stunde Zeit genommen und Yoga gemacht.</StyledBox>
-          <StyledBox>Ich hatte einen lustigen Abend mit Freunden am Lagerfeuer.</StyledBox>
-          <StyledBox>Ich habe Zeit mit meinen Eltern und Großeltern verbracht.</StyledBox>
-        </div>
-      </StyledPage>
-    </div>
+    <StyledPage>
+      <StyledHeading>Wofür bist du heute dankbar?</StyledHeading>
+
+      {dayEntries.map((object, index) => (
+        <Dayentry key={index} text={object.text} datum={object.date} />
+      ))}
+    </StyledPage>
   );
 }
