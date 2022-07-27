@@ -27,11 +27,11 @@ const StyledBox = styled.div`
   font-size: 15px;
 `;
 
-const Dayentry = props => {
+const Dayentry = ({datum, text}) => {
   return (
     <>
-      <StyledDatum>{props.datum}</StyledDatum>
-      <StyledBox>{props.text}</StyledBox>
+      <StyledDatum>{datum}</StyledDatum>
+      <StyledBox>{text}</StyledBox>
     </>
   );
 };

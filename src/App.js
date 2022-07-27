@@ -33,11 +33,9 @@ export default function App() {
     <StyledPage>
       <StyledHeading>Wofür bist du heute dankbar?</StyledHeading>
 
-      <div>
-        {dayEntries.map((object, index) => (
-          <Dayentry key={index} text={object.text} datum={object.date} />
-        ))}
-      </div>
+      {dayEntries.map((object, index) => (
+        <Dayentry key={index} text={object.text} datum={object.date} />
+      ))}
     </StyledPage>
   );
 }
