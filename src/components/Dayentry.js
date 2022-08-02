@@ -27,13 +27,22 @@ const StyledBox = styled.div`
   font-size: 15px;
 `;
 
-const Dayentry = ({datum, text}) => {
+export default function Dayentry({datum, text}) {
   return (
     <>
       <StyledDatum>{datum}</StyledDatum>
       <StyledBox>{text}</StyledBox>
     </>
   );
-};
+}
 
-export default Dayentry;
+// const Dayentry = ({datum, text}) => {
+//   return (
+//     <>
+//       <StyledDatum>{datum}</StyledDatum>
+//       <StyledBox>{text}</StyledBox>
+//     </>
+//   );
+// };
+
+// export default Dayentry;
