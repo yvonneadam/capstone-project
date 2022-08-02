@@ -16,6 +16,18 @@ export default function CalendarPage() {
       text: 'Ich habe Zeit mit meinen Eltern und Großeltern verbracht.',
       date: '19.07.2022',
     },
+    {
+      text: 'Ich habe mir bewusst eine Stunde Zeit genommen und Yoga praktiziert.',
+      date: '21.07.2022',
+    },
+    {
+      text: 'Ich hatte einen lustigen Abend mit Freunden am Lagerfeuer.',
+      date: '20.07.2022',
+    },
+    {
+      text: 'Ich habe Zeit mit meinen Eltern und Großeltern verbracht.',
+      date: '19.07.2022',
+    },
   ];
 
   return (
