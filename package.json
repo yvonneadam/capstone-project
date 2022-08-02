@@ -2,7 +2,6 @@
   "name": "capstone-project",
   "description": "A capstone project for neuefische",
   "private": true,
-  "license": "MIT",
   "scripts": {
     "build": "react-scripts build",
     "start": "vercel dev",
