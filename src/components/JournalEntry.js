@@ -27,13 +27,9 @@ const StyledBox = styled.div`
   font-size: 15px;
 `;
 
-export default function Dayentry({datum, text}) {
+export default function JournalEntry({datum, text}) {
   return (
     <>
-      <form>
-        <label htmlFor="GratitudeJournal" />
-        <input type="text" name="journal" id="journal" required />
-      </form>
       <StyledDatum>{datum}</StyledDatum>
       <StyledBox>{text}</StyledBox>
     </>

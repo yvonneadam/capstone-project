@@ -1,4 +1,4 @@
-import Dayentry from '../components/Dayentry';
+import JournalEntry from '../components/JournalEntry';
 import Heading from '../components/Heading';
 
 export default function CalendarPage() {
@@ -33,7 +33,7 @@ export default function CalendarPage() {
     <>
       <Heading text={'Du bist ein Kalender'} />
       {data.map((object, index) => (
-        <Dayentry key={index} text={object.text} datum={object.date} />
+        <JournalEntry key={index} text={object.text} datum={object.date} />
       ))}
     </>
   );
