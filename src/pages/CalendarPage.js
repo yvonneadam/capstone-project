@@ -1,4 +1,3 @@
-import React from 'react';
 import Dayentry from '../components/Dayentry';
 import Heading from '../components/Heading';
 

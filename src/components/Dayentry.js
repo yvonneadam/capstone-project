@@ -35,14 +35,3 @@ export default function Dayentry({datum, text}) {
     </>
   );
 }
-
-// const Dayentry = ({datum, text}) => {
-//   return (
-//     <>
-//       <StyledDatum>{datum}</StyledDatum>
-//       <StyledBox>{text}</StyledBox>
-//     </>
-//   );
-// };
-
-// export default Dayentry;
