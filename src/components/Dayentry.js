@@ -30,6 +30,10 @@ const StyledBox = styled.div`
 export default function Dayentry({datum, text}) {
   return (
     <>
+      <form>
+        <label htmlFor="GratitudeJournal" />
+        <input type="text" name="journal" id="journal" required />
+      </form>
       <StyledDatum>{datum}</StyledDatum>
       <StyledBox>{text}</StyledBox>
     </>
