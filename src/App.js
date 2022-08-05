@@ -4,6 +4,7 @@ import FormPage from './pages/FormPage';
 import CalendarPage from './pages/CalendarPage';
 import NavTop from './components/NavTop';
 import NavBottom from './components/NavBottom';
+import {loadFromLocalStorage, writeToLocalStorage} from './util/localstorage';
 
 const StyledPage = styled.div`
   padding: 35px 15px;

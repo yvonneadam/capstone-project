@@ -2,6 +2,7 @@ import Heading from '../components/Heading';
 import {useState} from 'react';
 import styled from 'styled-components';
 import JournalEntry from '../components/JournalEntry';
+import {writeToLocalStorage, loadFromLocalStorage} from '../util/localstorage';
 
 const StyledTextArea = styled.textarea`
   width: 100%;
@@ -9,7 +10,11 @@ const StyledTextArea = styled.textarea`
 `;
 
 const StyledButton = styled.button`
-  color: blue;
+  color: #797431;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
 `;
 
 const StyledLabel = styled.label`
@@ -18,7 +23,21 @@ const StyledLabel = styled.label`
 
 export default function FormPage() {
   const [textArea, settextArea] = useState('');
-  const [journalEntry, setjournalEntry] = useState('');
+  const onSubmit = () => {
+    const loadFromStorage = loadFromLocalStorage('JournalEntry');
+    console.log(loadFromStorage);
+
+    writeToLocalStorage('JournalEntry', [...loadFromStorage, {text: textArea, date: getCurrentDate()}]);
+  };
+
+  function getCurrentDate() {
+    return new Date().toLocaleDateString('de-DE', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+    });
+    // .replace(/[.,]/g, match => (match === '.' ? '.' : ''));
+  }
 
   return (
     <>
@@ -36,13 +55,12 @@ export default function FormPage() {
         <StyledButton
           onClick={event => {
             event.preventDefault();
-            setjournalEntry(textArea);
+            onSubmit();
           }}
         >
           Submit
         </StyledButton>
       </form>
-      <JournalEntry text={journalEntry} datum={'22.08.2022'} />
     </>
   );
 }

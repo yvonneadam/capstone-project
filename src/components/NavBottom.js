@@ -19,10 +19,11 @@ const Nav = styled.nav`
   bottom: 0;
   width: 100%;
   height: 40px;
-  text-align: center;
+  text-align: left;
 `;
 const Link = styled(NavLink)`
   color: #ffffff;
   background-color: #e86d1b;
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
 `;

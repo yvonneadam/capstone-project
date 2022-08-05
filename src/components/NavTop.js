@@ -20,7 +20,7 @@ const Nav = styled.nav`
 `;
 
 const Link = styled(NavLink)`
-  color: #ffffff;
+  color: #fff;
   background-color: #e86d1b;
   text-decoration: none;
 `;
