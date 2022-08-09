@@ -1,4 +1,3 @@
-import JournalEntry from '../components/JournalEntry';
 import Heading from '../components/Heading';
 import {loadFromLocalStorage} from '../util/localstorage';
 import {useState} from 'react';
@@ -8,17 +7,12 @@ import {useNavigate} from 'react-router-dom';
 
 export default function CalendarPage() {
   const [entries, setEntries] = useState(loadFromLocalStorage('JournalEntry') ?? []);
-
   let navigate = useNavigate();
 
-  console.log(
-    entries.find(entry => {
-      console.log(entry);
-    })
-  );
+  console.log(entries.find(entry => {}));
   return (
     <>
-      <Heading text={'Du bist ein Kalender'} />
+      <Heading>Du bist ein Kalender</Heading>
       <Calendar
         tileContent={({activeStartDate, date, view}) =>
           view === 'month' &&

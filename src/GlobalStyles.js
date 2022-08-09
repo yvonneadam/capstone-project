@@ -6,7 +6,6 @@ const styled = {createGlobalStyle};
 export default styled.createGlobalStyle`
   * {
     box-sizing: border-box;
-    background-color: #fae9c3;
   }
 
   body {

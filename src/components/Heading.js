@@ -8,6 +8,6 @@ const StyledHeading = styled.h1`
   margin-bottom: 35px;
 `;
 
-export default function Heading({text}) {
-  return <StyledHeading>{text}</StyledHeading>;
+export default function Heading({children}) {
+  return <StyledHeading>{children}</StyledHeading>;
 }

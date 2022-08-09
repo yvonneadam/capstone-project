@@ -6,24 +6,24 @@ export default function NavTop() {
     <Nav>
       <Link to="ScalePage">ScalePage</Link>
       <Link to="/">FormPage</Link>
+      <Link to="QuotePage">QuotePage</Link>
     </Nav>
   );
 }
 
 const Nav = styled.nav`
   display: flex;
-  border: solid #e86d1b;
-  background-color: #e86d1b;
-  gap: 20px;
   position: fixed;
-  bottom: 0;
+  top: 600px;
+  background-color: #6d6f3a;
   width: 100%;
-  height: 40px;
-  text-align: left;
+  padding: 15px;
+  gap: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 `;
+
 const Link = styled(NavLink)`
-  color: #ffffff;
-  background-color: #e86d1b;
+  color: white;
   display: flex;
-  justify-content: flex-end;
+  padding-left: 50px;
 `;

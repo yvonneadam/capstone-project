@@ -5,10 +5,9 @@ import {useState} from 'react';
 
 export default function CalendarPage() {
   const [data, setData] = useState(loadFromLocalStorage('JournalEntry') ?? []);
-  console.log(data.length);
   return (
     <>
-      <Heading text={'Du bist ein Kalender'} />
+      <Heading> Du bist ein Kalender </Heading>
       {data.map((object, index) => (
         <JournalEntry key={index} text={object.text} datum={object.date} />
       ))}
