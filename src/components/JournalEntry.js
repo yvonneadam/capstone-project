@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import styled from 'styled-components';
 
 const StyledDatum = styled.div`
@@ -27,22 +28,11 @@ const StyledBox = styled.div`
   font-size: 15px;
 `;
 
-export default function Dayentry({datum, text}) {
+export default function JournalEntry({datum, text}) {
   return (
     <>
-      <StyledDatum>{datum}</StyledDatum>
+      <StyledDatum>{dayjs(datum).format('DD.MM.YYYY')}</StyledDatum>
       <StyledBox>{text}</StyledBox>
     </>
   );
 }
-
-// const Dayentry = ({datum, text}) => {
-//   return (
-//     <>
-//       <StyledDatum>{datum}</StyledDatum>
-//       <StyledBox>{text}</StyledBox>
-//     </>
-//   );
-// };
-
-// export default Dayentry;

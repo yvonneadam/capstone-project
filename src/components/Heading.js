@@ -1,6 +1,4 @@
-import React from 'react';
 import styled from 'styled-components';
-import FormPage from '../pages/FormPage';
 
 const StyledHeading = styled.h1`
   color: #797431;
@@ -11,9 +9,5 @@ const StyledHeading = styled.h1`
 `;
 
 export default function Heading({text}) {
-  return (
-    <>
-      <StyledHeading>{text}</StyledHeading>
-    </>
-  );
+  return <StyledHeading>{text}</StyledHeading>;
 }

@@ -1,41 +1,35 @@
-import React from 'react';
-import Dayentry from '../components/Dayentry';
+import JournalEntry from '../components/JournalEntry';
 import Heading from '../components/Heading';
+import {loadFromLocalStorage} from '../util/localstorage';
+import {useState} from 'react';
+import Calendar from 'react-calendar';
+import dayjs from 'dayjs';
+import {useNavigate} from 'react-router-dom';
 
 export default function CalendarPage() {
-  const data = [
-    {
-      text: 'Ich habe mir bewusst eine Stunde Zeit genommen und Yoga praktiziert.',
-      date: '21.07.2022',
-    },
-    {
-      text: 'Ich hatte einen lustigen Abend mit Freunden am Lagerfeuer.',
-      date: '20.07.2022',
-    },
-    {
-      text: 'Ich habe Zeit mit meinen Eltern und Großeltern verbracht.',
-      date: '19.07.2022',
-    },
-    {
-      text: 'Ich habe mir bewusst eine Stunde Zeit genommen und Yoga praktiziert.',
-      date: '21.07.2022',
-    },
-    {
-      text: 'Ich hatte einen lustigen Abend mit Freunden am Lagerfeuer.',
-      date: '20.07.2022',
-    },
-    {
-      text: 'Ich habe Zeit mit meinen Eltern und Großeltern verbracht.',
-      date: '19.07.2022',
-    },
-  ];
+  const [entries, setEntries] = useState(loadFromLocalStorage('JournalEntry') ?? []);
 
+  let navigate = useNavigate();
+
+  console.log(
+    entries.find(entry => {
+      console.log(entry);
+    })
+  );
   return (
     <>
       <Heading text={'Du bist ein Kalender'} />
-      {data.map((object, index) => (
-        <Dayentry key={index} text={object.text} datum={object.date} />
-      ))}
+      <Calendar
+        tileContent={({activeStartDate, date, view}) =>
+          view === 'month' &&
+          entries.find(entry => {
+            return dayjs(entry.date).isSame(date, 'day');
+          }) ? (
+            <p>.</p>
+          ) : null
+        }
+        onClickDay={(value, event) => navigate('/journalentrypage')}
+      />
     </>
   );
 }
