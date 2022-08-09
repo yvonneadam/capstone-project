@@ -3,6 +3,7 @@ import {useState} from 'react';
 import styled from 'styled-components';
 import JournalEntry from '../components/JournalEntry';
 import {writeToLocalStorage, loadFromLocalStorage} from '../util/localstorage';
+import dayjs from 'dayjs';
 
 const StyledTextArea = styled.textarea`
   width: 100%;
@@ -24,20 +25,11 @@ const StyledLabel = styled.label`
 export default function FormPage() {
   const [textArea, settextArea] = useState('');
   const onSubmit = () => {
-    const loadFromStorage = loadFromLocalStorage('JournalEntry');
+    const loadFromStorage = loadFromLocalStorage('JournalEntry') ?? [];
     console.log(loadFromStorage);
 
-    writeToLocalStorage('JournalEntry', [...loadFromStorage, {text: textArea, date: getCurrentDate()}]);
+    writeToLocalStorage('JournalEntry', [...loadFromStorage, {text: textArea, date: dayjs()}]);
   };
-
-  function getCurrentDate() {
-    return new Date().toLocaleDateString('de-DE', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-    });
-    // .replace(/[.,]/g, match => (match === '.' ? '.' : ''));
-  }
 
   return (
     <>
@@ -56,6 +48,7 @@ export default function FormPage() {
           onClick={event => {
             event.preventDefault();
             onSubmit();
+            event.target.reset();
           }}
         >
           Submit

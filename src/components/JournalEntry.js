@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import styled from 'styled-components';
 
 const StyledDatum = styled.div`
@@ -30,7 +31,7 @@ const StyledBox = styled.div`
 export default function JournalEntry({datum, text}) {
   return (
     <>
-      <StyledDatum>{datum}</StyledDatum>
+      <StyledDatum>{dayjs(datum).format('DD.MM.YYYY')}</StyledDatum>
       <StyledBox>{text}</StyledBox>
     </>
   );

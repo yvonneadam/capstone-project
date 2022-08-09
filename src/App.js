@@ -5,6 +5,7 @@ import CalendarPage from './pages/CalendarPage';
 import NavTop from './components/NavTop';
 import NavBottom from './components/NavBottom';
 import {loadFromLocalStorage, writeToLocalStorage} from './util/localstorage';
+import JournalEntry from './components/JournalEntry';
 
 const StyledPage = styled.div`
   padding: 35px 15px;
@@ -18,6 +19,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<FormPage />} />
           <Route path="calendarpage" element={<CalendarPage />} />
+          <Route path="journalentrypage" element={<JournalEntry />} />
         </Routes>
       </StyledPage>
       <NavBottom />
