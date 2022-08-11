@@ -5,24 +5,27 @@ import {writeToLocalStorage, loadFromLocalStorage} from '../util/localstorage';
 import dayjs from 'dayjs';
 
 const StyledTextArea = styled.textarea`
-  width: 80%;
-  height: 200px;
-  margin: 35px;
-  padding: 15px;
-  border: 7px solid #ffa33a;
+  height: 250px;
+  width: 250px;
+  margin: 20px 50px;
+  padding: 10px;
+  border: 7px solid #fc9622;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
+const StyledButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
 const StyledButton = styled.button`
-  position: absolute;
-  left: 130px;
-  top: 350px;
   background-color: #fc9622;
   border: solid #fc9622;
-  color: #797431;
+  color: #fff;
   border-radius: 15px;
-  padding: 7px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
 const StyledLabel = styled.label`
@@ -31,6 +34,7 @@ const StyledLabel = styled.label`
 
 export default function FormPage() {
   const [textArea, setTextArea] = useState('');
+
   const onSubmit = () => {
     const loadFromStorage = loadFromLocalStorage('JournalEntry') ?? [];
     writeToLocalStorage('JournalEntry', [...loadFromStorage, {text: textArea, date: dayjs()}]);
@@ -38,7 +42,7 @@ export default function FormPage() {
 
   return (
     <>
-      <Heading> What are you grateful for today? </Heading>
+      <Heading> What are you grateful for today?</Heading>
       <form>
         <StyledLabel htmlFor="GratitudeJournal">Form for GratitudeJournal </StyledLabel>
         <StyledTextArea
@@ -46,18 +50,19 @@ export default function FormPage() {
           aria-label="Form for GratitudeJournal"
           name="journal"
           id="GratitudeJournal"
-          placeholder="Write here something what you're greatful for today :)"
+          placeholder="Here is room for appreciation for yourself and the good things that happened today."
           required
         />
-        <StyledButton
-          onClick={event => {
-            event.preventDefault();
-            onSubmit();
-            event.target.reset();
-          }}
-        >
-          Submit
-        </StyledButton>
+        <StyledButtonWrapper>
+          <StyledButton
+            onClick={event => {
+              event.preventDefault();
+              onSubmit();
+            }}
+          >
+            Submit
+          </StyledButton>
+        </StyledButtonWrapper>
       </form>
     </>
   );

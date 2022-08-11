@@ -6,23 +6,38 @@ import dayjs from 'dayjs';
 import {useNavigate} from 'react-router-dom';
 
 export default function CalendarPage() {
-  const [entries, setEntries] = useState(loadFromLocalStorage('JournalEntry') ?? []);
+  const [journalEntries, setJournalEntries] = useState(loadFromLocalStorage('JournalEntry') ?? []);
+  const [ratingEntries, setRatingEntries] = useState(loadFromLocalStorage('Ratings') ?? []);
   let navigate = useNavigate();
 
-  console.log(entries.find(entry => {}));
+  const tileContent = ({activeStartDate, date, view}) => {
+    if (!view === 'month') return null;
+
+    const hasJournalEntry = journalEntries.find(entry => {
+      return dayjs(entry.date).isSame(date, 'day');
+    });
+
+    const hasRatingEntry = ratingEntries.find(entry => {
+      return dayjs(entry.date).isSame(date, 'day');
+    });
+
+    if (hasJournalEntry && hasRatingEntry) {
+      return <div>. .</div>;
+    }
+
+    if (hasJournalEntry || hasRatingEntry) {
+      return <div>.</div>;
+    }
+
+    return null;
+  };
+
   return (
     <>
-      <Heading>Du bist ein Kalender</Heading>
+      <Heading>Take your time for reflection</Heading>
       <Calendar
-        tileContent={({activeStartDate, date, view}) =>
-          view === 'month' &&
-          entries.find(entry => {
-            return dayjs(entry.date).isSame(date, 'day');
-          }) ? (
-            <p>.</p>
-          ) : null
-        }
-        onClickDay={(value, event) => navigate('/journalentrypage')}
+        tileContent={tileContent}
+        onClickDay={(day, event) => navigate('/journalentrypage/' + dayjs(day).format('YYYY-MM-DD'))}
       />
     </>
   );

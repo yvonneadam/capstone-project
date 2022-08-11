@@ -1,29 +1,46 @@
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
+import {RiHandHeartLine} from 'react-icons/ri';
+import {FaChartBar} from 'react-icons/fa';
+import {BsChatSquareQuote} from 'react-icons/bs';
 
-export default function NavTop() {
-  return (
-    <Nav>
-      <Link to="ScalePage">ScalePage</Link>
-      <Link to="/">FormPage</Link>
-      <Link to="QuotePage">QuotePage</Link>
-    </Nav>
-  );
-}
+// const {RiHandHeartLine} = styled.RiHandHeartLine`
+//   background-color: black;
+// `;
+
+const StyledFooter = styled.footer`
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+`;
 
 const Nav = styled.nav`
   display: flex;
-  position: fixed;
-  top: 600px;
+  justify-content: space-around;
   background-color: #6d6f3a;
-  width: 100%;
   padding: 15px;
-  gap: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
 const Link = styled(NavLink)`
-  color: white;
+  color: #fc9622;
   display: flex;
-  padding-left: 50px;
 `;
+
+export default function NavTop() {
+  return (
+    <StyledFooter>
+      <Nav>
+        <Link to="ScalePage">
+          <FaChartBar size={'30'} />
+        </Link>
+        <Link to="/">
+          <RiHandHeartLine size={'30'} />
+        </Link>
+        <Link to="QuotePage">
+          <BsChatSquareQuote size={'30'} />
+        </Link>
+      </Nav>
+    </StyledFooter>
+  );
+}
