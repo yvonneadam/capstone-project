@@ -6,13 +6,21 @@ const styled = {createGlobalStyle};
 export default styled.createGlobalStyle`
   * {
     box-sizing: border-box;
-    background-color: #fae9c3;
+  }
+
+  #root {
+    height: 100%;
+  }
+
+  html {
+    height: 100%;
   }
 
   body {
     margin: 0;
     font-size: 1.125rem;
     font-family: sans-serif;
+    height: 100%;
   }
 
   button,
