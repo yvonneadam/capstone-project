@@ -13,12 +13,12 @@ const StyledMain = styled.main`
   background-attachment: fixed;
   background-size: cover;
   min-height: 100%;
+  opacity: 0.9;
 `;
 
 const StyledPage = styled.div`
   background-color: transparent;
   padding: 75px 20px 100px;
-  opacity: 0.7;
 `;
 
 export default function App() {

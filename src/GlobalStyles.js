@@ -20,6 +20,7 @@ export default styled.createGlobalStyle`
     margin: 0;
     font-size: 1.125rem;
     font-family: sans-serif;
+    font-family: 'Karla', sans-serif;
     height: 100%;
   }
 

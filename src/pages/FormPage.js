@@ -4,13 +4,22 @@ import styled from 'styled-components';
 import {writeToLocalStorage, loadFromLocalStorage} from '../util/localstorage';
 import dayjs from 'dayjs';
 
+const Styledform = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0px 25px;
+`;
+
 const StyledTextArea = styled.textarea`
+  font-family: 'Quicksand', sans-serif;
   height: 250px;
   width: 250px;
-  margin: 20px 50px;
-  padding: 10px;
+  padding: 40px;
+  text-align: center;
   border: 7px solid #fc9622;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
 `;
 
 const StyledButtonWrapper = styled.div`
@@ -23,9 +32,15 @@ const StyledButton = styled.button`
   background-color: #fc9622;
   border: solid #fc9622;
   color: #fff;
-  border-radius: 15px;
-  padding: 10px;
+  border-radius: 35px;
+  padding: 5px 10px 3px 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+
+  &:hover {
+    background-color: #565e38;
+    border: solid #565e38;
+  }
 `;
 
 const StyledLabel = styled.label`
@@ -42,28 +57,32 @@ export default function FormPage() {
 
   return (
     <>
-      <Heading> What are you grateful for today?</Heading>
-      <form>
+      <Heading>
+        What are you grateful <br /> for today?
+      </Heading>
+
+      <Styledform>
         <StyledLabel htmlFor="GratitudeJournal">Form for GratitudeJournal </StyledLabel>
         <StyledTextArea
           onChange={event => setTextArea(event.target.value)}
           aria-label="Form for GratitudeJournal"
           name="journal"
           id="GratitudeJournal"
-          placeholder="Here is room for appreciation for yourself and the good things that happened today."
+          placeholder="This is your space to write about the good things happening today and what you appreciate about yourself."
           required
         />
-        <StyledButtonWrapper>
-          <StyledButton
-            onClick={event => {
-              event.preventDefault();
-              onSubmit();
-            }}
-          >
-            Submit
-          </StyledButton>
-        </StyledButtonWrapper>
-      </form>
+      </Styledform>
+
+      <StyledButtonWrapper>
+        <StyledButton
+          onClick={event => {
+            event.preventDefault();
+            onSubmit();
+          }}
+        >
+          Submit
+        </StyledButton>
+      </StyledButtonWrapper>
     </>
   );
 }

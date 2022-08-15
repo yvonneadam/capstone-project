@@ -12,14 +12,15 @@ const StyledHeader = styled.header`
 const Nav = styled.nav`
   display: flex;
   justify-content: flex-end;
-  background-color: #6d6f3a;
+  background-color: #f3f1ee;
   width: 100%;
-  padding: 10px 45px;
+  padding: 10px 50px;
+  opacity: 0.9;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
 const Link = styled(NavLink)`
-  color: #fc9622;
+  color: #565e38;
   text-decoration: none;
 `;
 

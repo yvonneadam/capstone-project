@@ -13,6 +13,7 @@ const StyledQuote = styled.img`
   margin-top: 70px;
   border: 7px solid #ffa33a;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
 `;
 
 export default function QuotePage() {
