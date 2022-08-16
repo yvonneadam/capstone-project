@@ -31,23 +31,22 @@ const StyledButtonWrapper = styled.div`
 `;
 
 const StyledButton = styled.button`
+  border: solid #fc9622;
   background-color: #fc9622;
   color: #fff;
   border-radius: 35px;
   padding: 5px 10px 3px 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   opacity: 0.9;
-  box-shadow: 0 9px #999;
 
   &:hover {
     background-color: #565e38;
-    border: solid #565e38;
   }
 
   &:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(40px);
+    color: #fc9622;
+    background-color: #f3f1ee;
+    box-shadow: 0 5px #f3f1ee;
   }
 `;
 
@@ -69,7 +68,6 @@ export default function FormPage() {
       <Heading>
         What are you grateful <br /> for today?
       </Heading>
-
       <Styledform>
         <StyledLabel htmlFor="GratitudeJournal">Form for GratitudeJournal </StyledLabel>
         <StyledTextArea
@@ -82,7 +80,6 @@ export default function FormPage() {
           required
         />
       </Styledform>
-
       <StyledButtonWrapper>
         <StyledButton
           onClick={event => {
