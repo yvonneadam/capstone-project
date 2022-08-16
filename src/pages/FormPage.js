@@ -12,7 +12,6 @@ const Styledform = styled.form`
 `;
 
 const StyledTextArea = styled.textarea`
-  font-family: 'Quicksand', sans-serif;
   height: 250px;
   width: 250px;
   padding: 40px;
@@ -20,6 +19,9 @@ const StyledTextArea = styled.textarea`
   border: 7px solid #fc9622;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   opacity: 0.7;
+  &:focus::placeholder {
+    color: transparent;
+  }
 `;
 
 const StyledButtonWrapper = styled.div`
@@ -30,16 +32,22 @@ const StyledButtonWrapper = styled.div`
 
 const StyledButton = styled.button`
   background-color: #fc9622;
-  border: solid #fc9622;
   color: #fff;
   border-radius: 35px;
   padding: 5px 10px 3px 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   opacity: 0.9;
+  box-shadow: 0 9px #999;
 
   &:hover {
     background-color: #565e38;
     border: solid #565e38;
+  }
+
+  &:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(40px);
   }
 `;
 
@@ -53,6 +61,7 @@ export default function FormPage() {
   const onSubmit = () => {
     const loadFromStorage = loadFromLocalStorage('JournalEntry') ?? [];
     writeToLocalStorage('JournalEntry', [...loadFromStorage, {text: textArea, date: dayjs()}]);
+    setTextArea('');
   };
 
   return (
@@ -64,6 +73,7 @@ export default function FormPage() {
       <Styledform>
         <StyledLabel htmlFor="GratitudeJournal">Form for GratitudeJournal </StyledLabel>
         <StyledTextArea
+          value={textArea}
           onChange={event => setTextArea(event.target.value)}
           aria-label="Form for GratitudeJournal"
           name="journal"

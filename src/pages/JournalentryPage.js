@@ -8,7 +8,6 @@ import styled from 'styled-components';
 
 const StyledReflectionHeading = styled.h1`
   color: #565e38;
-  font-family: 'Karla', sans-serif;
   font-size: 25px;
   margin: 30px 0px 30px;
   text-align: left;

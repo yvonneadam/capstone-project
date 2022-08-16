@@ -4,24 +4,26 @@ import styled from 'styled-components';
 import {writeToLocalStorage, loadFromLocalStorage} from '../util/localstorage';
 import dayjs from 'dayjs';
 
-// const Rating = styled(Rating)`
-//   color: green;
-// `;
-
 const StyledButton = styled.button`
   display: block;
-  background-color: #fc9622;
   border: solid #fc9622;
+  background-color: #fc9622;
   color: #fff;
   border-radius: 35px;
   padding: 5px 10px 3px 10px;
   margin: 35px 0px;
-  opacity: 0.9;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
 
   &:hover {
     background-color: #565e38;
-    border: solid #565e38;
+  }
+
+  &:active {
+    color: #fc9622;
+    background-color: #f3f1ee;
+    box-shadow: 0 5px #f3f1ee;
+    transform: translateY(35px);
   }
 `;
 

@@ -10,7 +10,6 @@ const StyledDatum = styled.div`
   padding: 9px;
   margin-bottom: 5px;
   color: #fae9c3;
-  font-family: 'Karla', sans-serif;
   font-size: 15px;
 `;
 
@@ -22,7 +21,6 @@ const StyledBox = styled.div`
   padding: 15px;
   margin-bottom: 25px;
   color: #fae9c3;
-  font-family: 'Karla', sans-serif;
   font-size: 15px;
 `;
 
