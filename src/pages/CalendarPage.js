@@ -1,9 +1,16 @@
-import Heading from '../components/Heading';
 import {loadFromLocalStorage} from '../util/localstorage';
 import {useState} from 'react';
 import Calendar from 'react-calendar';
 import dayjs from 'dayjs';
 import {useNavigate} from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledReflectionHeading = styled.h1`
+  color: #565e38;
+  font-size: 25px;
+  margin: 30px 0px 30px;
+  text-align: left;
+`;
 
 export default function CalendarPage() {
   const [journalEntries, setJournalEntries] = useState(loadFromLocalStorage('JournalEntry') ?? []);
@@ -34,7 +41,7 @@ export default function CalendarPage() {
 
   return (
     <>
-      <Heading>Take your time for reflection</Heading>
+      <StyledReflectionHeading>Take your time for reflection</StyledReflectionHeading>
       <Calendar
         tileContent={tileContent}
         onClickDay={(day, event) => navigate('/journalentrypage/' + dayjs(day).format('YYYY-MM-DD'))}

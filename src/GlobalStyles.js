@@ -19,7 +19,7 @@ export default styled.createGlobalStyle`
   body {
     margin: 0;
     font-size: 1.125rem;
-    font-family: sans-serif;
+    font-family: 'Urbanist', sans-serif;
     height: 100%;
   }
 

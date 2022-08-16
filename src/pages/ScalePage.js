@@ -4,21 +4,26 @@ import styled from 'styled-components';
 import {writeToLocalStorage, loadFromLocalStorage} from '../util/localstorage';
 import dayjs from 'dayjs';
 
-// const Rating = styled(Rating)`
-//   color: green;
-// `;
-
 const StyledButton = styled.button`
   display: block;
-  background-color: #fc9622;
   border: solid #fc9622;
+  background-color: #fc9622;
   color: #fff;
-  border-radius: 15px;
-  padding: 10px;
+  border-radius: 35px;
+  padding: 5px 10px 3px 10px;
+  margin: 35px 0px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
 
   &:hover {
-    background-color: green;
+    background-color: #565e38;
+  }
+
+  &:active {
+    color: #fc9622;
+    background-color: #f3f1ee;
+    box-shadow: 0 5px #f3f1ee;
+    transform: translateY(35px);
   }
 `;
 
@@ -60,17 +65,17 @@ export default function ScalePage() {
 
   return (
     <>
-      <h4>How are you feeling today?</h4>
+      <h4>How do you feel today?</h4>
       <Rating onChange={value => setRating1(value)} initialRating={rating1} />
       <h4>Did you sleep well and enough?</h4>
       <Rating onChange={value => setRating2(value)} initialRating={rating2} />
-      <h4>How healthy have you been eating?</h4>
+      <h4>Did you eat healthy?</h4>
       <Rating onChange={value => setRating3(value)} initialRating={rating3} />
       <h4>Did you drink enough water?</h4>
       <Rating onChange={value => setRating4(value)} initialRating={rating4} />
-      <h4>Have you had enough exercise?</h4>
+      <h4>Did you exercise enough?</h4>
       <Rating onChange={value => setRating5(value)} initialRating={rating5} />
-      <h4>Have you maintained your social contacts?</h4>
+      <h4>Did you socialize?</h4>
       <Rating onChange={value => setRating6(value)} initialRating={rating6} />
       <h4>Did you do something nice for yourself?</h4>
       <Rating onChange={value => setRating7(value)} initialRating={rating7} />

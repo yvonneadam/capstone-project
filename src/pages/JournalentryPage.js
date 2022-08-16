@@ -1,10 +1,17 @@
 import JournalEntry from '../components/JournalEntry';
-import Heading from '../components/Heading';
 import {loadFromLocalStorage} from '../util/localstorage';
 import {useState} from 'react';
 import {useParams} from 'react-router-dom';
 import dayjs from 'dayjs';
 import RatingEntry from '../components/RatingEntry';
+import styled from 'styled-components';
+
+const StyledReflectionHeading = styled.h1`
+  color: #565e38;
+  font-size: 25px;
+  margin: 30px 0px 30px;
+  text-align: left;
+`;
 
 export default function JournalEntryPage() {
   const [journalEntrys, setJournalEntrys] = useState(loadFromLocalStorage('JournalEntry') ?? []);
@@ -13,7 +20,7 @@ export default function JournalEntryPage() {
 
   return (
     <>
-      <Heading> Take your time for reflection</Heading>
+      <StyledReflectionHeading>Take your time for reflection</StyledReflectionHeading>
       {journalEntrys
         .filter(entry => dayjs(entry.date).isSame(datum, 'day'))
         .map((entry, index) => (

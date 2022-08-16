@@ -4,10 +4,6 @@ import {RiHandHeartLine} from 'react-icons/ri';
 import {FaChartBar} from 'react-icons/fa';
 import {BsChatSquareQuote} from 'react-icons/bs';
 
-// const {RiHandHeartLine} = styled.RiHandHeartLine`
-//   background-color: black;
-// `;
-
 const StyledFooter = styled.footer`
   position: fixed;
   bottom: 15px;
@@ -17,13 +13,14 @@ const StyledFooter = styled.footer`
 const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
-  background-color: #6d6f3a;
+  background-color: #f3f1ee;
   padding: 15px;
+  opacity: 0.9;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
 const Link = styled(NavLink)`
-  color: #fc9622;
+  color: #565e38;
   display: flex;
 `;
 
