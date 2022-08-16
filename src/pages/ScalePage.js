@@ -23,7 +23,6 @@ const StyledButton = styled.button`
     color: #fc9622;
     background-color: #f3f1ee;
     box-shadow: 0 5px #f3f1ee;
-    transform: translateY(35px);
   }
 `;
 
